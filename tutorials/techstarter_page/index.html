@@ -1,0 +1,132 @@
+//allererste Versuch einer Website aus März 2023
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techstarter-AWS2302</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+  <style>
+      body{
+        font-family: 'Noto Serif', serif;
+        background-color: #F3F5F6;
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+
+
+    .header-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    .headline{
+      color: rgba(4, 4, 106, 0.768)
+    }
+
+    .image-container{
+        background-color: white;
+        padding: 16px;
+    }
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    a {
+      color: rgba(4, 4, 106, 0.768);
+      text-decoration: none;
+      margin-left: 16px;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .text-container{
+        padding: 8px;
+        font-weight: 600;
+    }
+
+    .maps-container{
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .maps-right{
+      margin-left: 16px;
+      width: 40%;
+    }
+
+    .maps-frame{
+      border: 0;
+      height: 350px;
+      width: 60%;
+    }
+
+    .legal-content{
+      padding: 8px;
+    }
+
+    .legal-text{
+      margin-right: 16px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="navbar">
+      <h1 class="headline">
+        Techstarter<br> AWS 2302
+</h1>
+
+    <div>
+    <a href="#">Infos</a>
+    <a href="#">Glossar</a>
+    <a href="#">wichtige Links</a>
+    <a href="#">Zertifikate</a>
+  </div>
+</div>  
+
+<div class="image-container">
+  <img class="header-image" src="header.jpg">
+
+    <div class="text-container">
+    Nützliche Informationen zu unserem Kurs auf einem Blick
+    </div>
+
+
+    <div class="maps-container">
+      <iframe class="maps-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.551636324423!2d11.564298015649047!3d48.13816937922353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e755b93961a3f%3A0x84b5c2cf75857990!2sTechstarter%20GmbH!5e0!3m2!1sde!2sde!4v1676718688735!5m2!1sde!2sde" 
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   
+      <div class="class-container maps-right">
+        In zwölf Monaten zum Cloud Spezialisten
+
+      </div>
+    </div>
+
+   
+</div>
+
+<div class="legal-content">
+  <span class="legal-text">(c) 2023 - anja bruehl</span> | <a href="#">Impressum</a> | <a href="#">Datenschutz</a>
+</div>
+
+</body>
+</html>
