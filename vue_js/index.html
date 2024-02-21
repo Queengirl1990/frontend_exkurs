@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <script src="https://unpkg.com/vue@3.4.19"></script>
+  <style>
+    .task {
+      margin-bottom: 8px;
+    }
+
+    .circle {
+      margin-right: 8px;
+      border: 2px solid black;
+      border-radius: 12px;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      cursor: pointer; /* Zeiger anzeigen, wenn über Kreis */
+    }
+
+    .done .circle {
+      border-color: green; /* Farbe des Kreises */
+      color: green; /* Farbe des Häkchens */
+      cursor: default;
+    }
+
+    .title {
+      display: inline-block;
+      height: 20px;
+    }
+
+    .done .title {
+      color: green; 
+    }
+
+    .buttons {
+      display: inline-block;
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="to-do-list">
+    <h1>TO-Do Liste</h1>      
+    <div v-for="task in tasks" :key="task.title" class="task" :class="{done: task.done}">
+      <!-- Dynamisch Klasse prüfen, ob Eintrag erledigt ist -->
+      <div class="circle" @click="markAsDone(task)"><span v-if="task.done">✓</span></div>
+      <div class="title">{{ task.title }}</div> 
+      <div class="buttons">
+        <button @click="removeTask(task)">löschen</button>  
+        <button v-if="!task.done" @click="updateTask(task)">aktualisieren</button>  
+      </div>
+    </div>
+    <input v-model="newTitle" type="text" @keyup.enter="addTask" placeholder="Eintrag anlegen"> 
+    <!-- Buttonklick oder Entertaste führen addTask aus -->
+      <button :disabled="newTitle ===''" @click="addTask">Hinzufügen</button>
+  </div>
+  <script>
+    const ToDoListApp = {
+      data() {
+        return {
+          newTitle: "",
+          tasks: [
+            { title: "dyn. Eintrag 1", done: false },
+            { title: "dyn. Eintrag 2", done: true },
+            { title: "dyn. Eintrag 3", done: false },
+            { title: "dyn. Eintrag 4", done: false },
+          ]
+        }
+      },
+      mounted() {
+        this.loadList()
+      },
+      methods: {
+        markAsDone(task) {
+          task.done = true;
+          this.storeList();
+        },
+        removeTask(task) {
+          this.tasks = this.tasks.filter(t => t != task);
+          this.storeList();
+        },
+        addTask() {
+          this.tasks.push({title: this.newTitle, done: false});
+          this.newTitle = "";
+          this.storeList();
+        },
+        updateTask(task) {
+          var newTitle = prompt("Wie soll der Eintrag jetzt heißen?", task.title);
+          if (newTitle != null) {
+            task.title = newTitle;
+            this.storeList();
+          }
+        },
+        storeList() {
+          localStorage.setItem("toDoList", JSON.stringify(this.tasks));
+            //stringfy überführt
+        },
+        loadList() {
+          var stored = localStorage.getItem("toDoList");
+          if (stored != null) {
+            this.tasks = JSON.parse(stored);
+             //parse zurück lesen
+          }
+        }
+      }
+    };
+    Vue.createApp(ToDoListApp).mount('#app');
+  </script>
+</body>
+</html>
