@@ -1,0 +1,272 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa", cursive;
+}
+
+/* Schatten aufhellen */
+
+.Btn {
+    position: relative;
+    width: 180px;
+    height: 50px;
+    border: none;
+    background-color: #005f99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 8px 8px 0px rgb(12, 12, 12);
+    transition-duration: .3s;
+    margin-top: 5px;
+    margin-left: 15px; 
+  }
+  
+  .Layer {
+    width: 60px;
+    position: absolute;
+    left: -30px;
+    transition-duration: .3s;
+    animation: spin 5s  linear infinite;
+  }
+  
+  .Btn:hover {
+    transform: translateY(5px);
+    box-shadow: 3px 3px 0px black;
+    transition-duration: .3s;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .Btn:hover .Layer {
+    left: 0%;
+    width: 100%;
+    transition-duration: .3s;
+  }
+  
+  .text {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1em;
+    position: absolute;
+    z-index: 2;
+    transition-duration: .1s;
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  .Btn:hover .text {
+    color: transparent;
+    transition-duration: .3s;
+  }
+  /* svg colors */
+  .cls-1 {
+    fill: #242021;
+  }
+  
+  .cls-2 {
+    fill: #e82728;
+  }
+  
+  .cls-3 {
+    fill: #fefefe;
+  }
+  
+  .cls-4 {
+    fill: #e92728;
+  }
+  
+  .cls-5 {
+    fill: #005f99;
+  }
+  
+  .cls-6 {
+    fill: #fff;
+  }
+
+/* ironman */
+
+iron-button {
+    position: relative;
+    width: 180px;
+    height: 50px;
+    border: none;
+    background-color: rgb(231, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    border-radius: 0px;
+    cursor: pointer;
+    box-shadow: 8px 8px 0px rgb(12, 12, 12);
+    transition-duration: .3s;
+    margin-top: 20px; 
+    margin-left: 15px; 
+}
+  
+iron-button .iron-layer {
+    width: 60px;
+    position: absolute;
+    left: -30px;
+    transition-duration: .3s;
+    fill: #ffaf02;
+}
+  
+iron-button:hover {
+    transform: translateY(5px);
+    box-shadow: 3px 3px 0px rgb(0, 0, 0);
+    transition-duration: .3s;
+}
+  
+iron-button:hover .iron-layer {
+    left: 0%;
+    width: 100%;
+    transition-duration: .3s;
+}
+  
+iron-button p {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    position: absolute;
+    z-index: 2;
+    transition-duration: .1s;
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+  
+iron-button:hover p {
+    color: transparent;
+    transition-duration: .3s;
+}
+
+/* pokemon button */
+
+pika-button {
+    position: absolute; 
+    width: 150px;
+    height: 60px;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding-left: 35px;
+    box-shadow: 2.9px 2.9px 2.2px rgba(0, 0, 0, 0.019),
+                5.2px 5.2px 5.3px rgba(0, 0, 0, 0.023),
+                7px 7px 10px rgba(0, 0, 0, 0.025),
+                8.7px 8.7px 17.9px rgba(0, 0, 0, 0.024),
+                11.3px 11.3px 33.4px rgba(0, 0, 0, 0.023),
+                20px 20px 80px rgba(0, 0, 0, 0.02);
+    margin-top: 50px; /* Hier wird der Abstand zum Ironman-Button eingestellt */
+    margin-left: 15px; 
+  }
+  
+.pika {
+    position: absolute;
+    top: -100%;
+    left: 42%;
+    transition: 0.5s all;
+    animation: tilt 1.1s infinite ease-in-out;
+}
+
+@keyframes tilt {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(10deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+.pokeball {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    animation: rotate_4991 1s linear infinite;
+}
+
+@keyframes rotate_4991 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+pika-button:hover .pika {
+    top: 90%;
+}
+
+pika-button:hover .pokeball {
+    animation: none;
+    transform: scale(0);
+}
+
+pika-button:hover .go {
+    color: transparent;
+}
+
+.go {
+    position: absolute;
+    top: 18%;
+    left: 45%;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.pword,
+.pword2 {
+    position: absolute;
+    font-size: 13px;
+    opacity: 0;
+    animation: pulse-animation_0011 1s infinite;
+}
+
+@keyframes pulse-animation_0011 {
+    0% {
+        transform: rotateZ(-30deg) scale(1);
+    }
+
+    50% {
+        transform: rotateZ(-30deg) scale(1.1);
+    }
+
+    100% {
+        transform: rotateZ(-30deg) scale(1);
+    }
+}
+
+.pword {
+    top: 30%;
+    left: 72%;
+}
+
+.pword2 {
+    top: 55%;
+    left: 75%;
+}
+
+button:hover .pword,
+button:hover .pword2 {
+    opacity: 1;
+}
+
+  
