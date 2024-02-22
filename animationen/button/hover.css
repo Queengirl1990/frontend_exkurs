@@ -1,6 +1,7 @@
 /* Hover-Effekt für den Button */
 
 h-button {
+    margin-right: 20px;
     position: relative;
     display: inline-block;
     background: transparent;
@@ -30,7 +31,7 @@ h-button::before {
     left: 3px;
     border-radius: 10px;
     background: linear-gradient(320deg, rgba(0, 140, 255, 0.678), rgba(128, 0, 128, 0.308));
-    z-index: -1; /* Ändere den Wert von z-index, um das Pseudo-Element hinter den Text zu platzieren */
+    z-index: -1; 
     transition: background 3s;
 }
 
@@ -48,3 +49,130 @@ h-button:hover::before {
         transform: rotateY(360deg);
     }
 }
+
+/* github */
+
+.button-icon {
+    margin-right: 20px;
+    margin-top: 20px;
+    display: flex;
+    border: 3px #fff solid;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+  }
+  
+  .icon {
+    background-color: #fff;
+    padding: 10px 10px 5px 10px;
+  }
+  
+  .icon svg {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .cube {
+    transition: all 0.4s;
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 20px;
+  }
+  
+  .button-icon:hover {
+    border-color: #364958;
+  }
+  
+  .button-icon:hover .cube {
+    transform: rotateX(90deg);
+  }
+  
+  .side {
+    position: absolute;
+    height: 47px;
+    width: 200px;
+    display: flex;
+    font-size: 0.8em;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+  }
+  
+  .top {
+    background: #364958;
+    color: #fff;
+    transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+  }
+  
+  .front {
+    background: #222229;
+    color: #fff;
+    transform: translate3d(0, 0, 1em);
+  }
+
+/* play */
+
+  button {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+    color: white;
+    text-shadow: 2px 2px rgb(116, 116, 116);
+    text-transform: uppercase;
+    cursor: pointer;
+    border: solid 2px black;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 17px;
+    background-color: hsl(49deg 98% 60%);
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  button:active {
+    transform: scale(0.9);
+    transition: all 100ms ease;
+  }
+  
+  button svg {
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  
+  .play {
+    transition: all 0.5s ease;
+    transition-delay: 300ms;
+  }
+  
+  button:hover svg {
+    transform: scale(3) translate(50%);
+  }
+  
+  .now {
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  
+  button:hover .now {
+    transform: translateX(10px);
+    transition-delay: 300ms;
+  }
+  
+  button:hover .play {
+    transform: translateX(200%);
+    transition-delay: 300ms;
+  }
+  
+
+  
+  
